@@ -47,7 +47,7 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
             
             {/* Description */}
             <div className="max-w-4xl mx-auto">
-                <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-normal text-justify">
+                <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-normal text-left md:text-justify">
                     At POSH Consultants, we help clients buy and sell businesses across the UAE with complete clarity, trust, and honesty. Whether you are looking to acquire a business that fits your goals or sell your existing company, we manage every stage of the process with precision and care.
                 </p>
             </div>
@@ -79,7 +79,7 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
       <div className="space-y-6">
         <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100">
           {/* Description with proper alignment */}
-          <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8 tracking-normal text-justify md:text-left">
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8 tracking-normal text-left md:text-justify">
             We take time to understand your requirements your sector preferences, budget, expectations, experience, and long-term goals. Based on that, we find businesses that <span className="font-semibold text-yellow-700">truly match</span> what you're looking for.
           </p>
 
@@ -139,22 +139,25 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
             {/* CTA Button with proper alignment */}
             <button 
   onClick={() => handleNavClick('contactpage')}
-  className="w-full mt-6 md:mt-8 inline-flex items-center justify-center gap-3 
-             px-6 md:px-8 py-3 md:py-4 
+  className="w-full mt-6 md:mt-8 inline-flex items-center justify-center gap-2 sm:gap-3 
+             px-4 sm:px-6 md:px-8 py-3 md:py-4 
              bg-gradient-to-r from-yellow-500 to-yellow-600 
-             text-white text-base md:text-lg font-bold 
+             text-white text-sm sm:text-base md:text-lg font-bold 
              rounded-xl shadow-lg hover:shadow-xl 
              hover:from-yellow-600 hover:to-yellow-700 
-             transition-all duration-300 group tracking-normal"
+             transition-all duration-300 group tracking-normal overflow-hidden"
 >
-  <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <svg className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
   </svg>
 
-  <span className="text-left tracking-normal">
+  <span className="text-left tracking-normal truncate">
     Find Your Perfect Business Match
   </span>
+  {/* <svg className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+  </svg> */}
 </button>
 
           </div>
@@ -162,12 +165,13 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
       </div>
 
       {/* Image - Proper sizing */}
-      <div className="relative">
-        <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+      <div className="relative w-full">
+        <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl">
           <img
             src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
             alt="Business buyer analyzing opportunities"
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full max-w-full"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
         </div>
@@ -176,17 +180,18 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
   </div>
 </section>
 {/* For Sellers Section */}
-{/* For Sellers Section */}
 <section className="py-16 md:py-20 relative">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
     {/* Section Header */}
     <div className="text-center mb-10 md:mb-12">
-      <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-gray-900 to-black rounded-2xl mb-5 md:mb-6 shadow-lg">
-        <Handshake className="w-8 h-8 md:w-10 md:h-10 text-white" />
+      <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl mb-5 md:mb-6 shadow-lg">
+        <svg className="w-8 h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        </svg>
       </div>
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold md:font-extrabold text-gray-900 mb-3 md:mb-4 tracking-tight">
-        For Business <span className="text-gray-900 tracking-tight">Sellers</span>
+        For Business <span className="text-yellow-600 tracking-tight">Sellers</span>
       </h2>
       <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2 md:px-0 leading-relaxed tracking-normal">
         Maximizing your business value and connecting with qualified buyers
@@ -196,12 +201,13 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
 
       {/* Image */}
-      <div className="relative order-2 lg:order-1">
-        <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+      <div className="relative order-2 lg:order-1 w-full">
+        <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl">
           <img
             src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
             alt="Business seller presenting company value"
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full max-w-full"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
         </div>
@@ -212,15 +218,15 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
         <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100">
 
           {/* Description */}
-          <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8 tracking-normal text-justify md:text-left">
-            We collect every important detail about your business financials, operations, assets, liabilities, contracts, performance, and more and present it professionally to the <span className="font-semibold text-gray-900">right buyers or investors</span>.
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8 tracking-normal text-left md:text-justify">
+            We collect every important detail about your business financials, operations, assets, liabilities, contracts, performance, and more and present it professionally to the <span className="font-semibold text-yellow-700">right buyers or investors</span>.
           </p>
 
           <div className="space-y-6">
 
             {/* Services Header */}
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 flex items-center gap-3">
-              <div className="w-9 h-9 md:w-10 md:h-10 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-9 h-9 md:w-10 md:h-10 bg-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0">
                 <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-white" />
               </div>
               <span className="tracking-tight text-left flex-1">
@@ -228,22 +234,42 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
               </span>
             </h3>
 
-            {/* Services Grid */}
+            {/* Services Grid - Using SVG icons like Buyers section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               {[
-                { icon: Star, text: "Business valuation and pricing strategy" },
-                { icon: Award, text: "Financial documentation preparation" },
-                { icon: Compass, text: "Marketing to qualified buyer network" },
-                { icon: Handshake, text: "Negotiation support and deal structuring" },
-                { icon: Shield, text: "Legal documentation and transfer processes" },
-                { icon: Star, text: "Post-sale transition assistance" }
+                { 
+                  icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", 
+                  text: "Business valuation and pricing strategy" 
+                },
+                { 
+                  icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", 
+                  text: "Financial documentation preparation" 
+                },
+                { 
+                  icon: "M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z", 
+                  text: "Marketing to qualified buyer network" 
+                },
+                { 
+                  icon: "M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z", 
+                  text: "Negotiation support and deal structuring" 
+                },
+                { 
+                  icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", 
+                  text: "Legal documentation and transfer processes" 
+                },
+                { 
+                  icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6", 
+                  text: "Post-sale transition assistance" 
+                }
               ].map((item, index) => (
                 <div 
                   key={index} 
-                  className="flex items-start gap-3 p-3 md:p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                  className="flex items-start gap-3 p-3 md:p-4 bg-gray-50 rounded-lg hover:bg-yellow-50 transition-colors duration-200"
                 >
                   <div className="flex-shrink-0 mt-0.5">
-                    <item.icon className="w-5 h-5 md:w-6 md:h-6 text-gray-900" />
+                    <svg className="w-5 h-5 md:w-6 md:h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={item.icon}></path>
+                    </svg>
                   </div>
                   <span className="text-sm md:text-base text-gray-700 leading-tight tracking-normal text-left flex-1">
                     {item.text}
@@ -252,39 +278,34 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
               ))}
             </div>
 
-            {/* CTA BUTTON WITH CONSISTENT ICON */}
-            <div className="flex justify-center">
+            {/* CTA Button with yellow theme */}
             <button 
-  onClick={() => handleNavClick('contactpage')}
-  className="flex items-center justify-center gap-3 
-             px-6 md:px-8 py-3 md:py-4 
-             bg-gradient-to-r from-gray-900 to-black 
-             text-white text-base md:text-lg font-bold 
-             rounded-xl shadow-lg 
-             hover:shadow-xl hover:from-black hover:to-gray-800 
-             transition-all duration-300"
->
-  {/* Growth Icon using same pattern as list items */}
-  <svg 
-    className="w-5 h-5 md:w-6 md:h-6" 
-    fill="none" 
-    stroke="currentColor" 
-    viewBox="0 0 24 24"
-  >
-    <path 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
-      strokeWidth="2" 
-      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-    />
-  </svg>
-
-  <span className="tracking-normal whitespace-nowrap">
-    Maximize Your Business Value
-  </span>
-</button>
-</div>
-
+              onClick={() => handleNavClick('contactpage')}
+              className="w-full mt-6 md:mt-8 inline-flex items-center justify-center gap-2 sm:gap-3 
+                         px-4 sm:px-6 md:px-8 py-3 md:py-4 
+                         bg-gradient-to-r from-yellow-500 to-yellow-600 
+                         text-white text-sm sm:text-base md:text-lg font-bold 
+                         rounded-xl shadow-lg hover:shadow-xl 
+                         hover:from-yellow-600 hover:to-yellow-700 
+                         transition-all duration-300 group tracking-normal overflow-hidden"
+            >
+              <svg 
+                className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth="2" 
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                />
+              </svg>
+              <span className="text-left tracking-normal truncate">
+                Maximize Your Business Value
+              </span>
+            </button>
 
           </div>
         </div>
@@ -315,9 +336,7 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8">
                         Confidentiality at <span className="text-yellow-500">Every Step</span>
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
-                        Business transactions require privacy and discretion.
-                    </p>
+  
                     <p className="text-lg text-gray-300 max-w-4xl mx-auto">
                         Your trust is our priority, and we operate with the highest level of privacy throughout the process.
                     </p>
@@ -399,7 +418,7 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
                     <p className="text-xl md:text-2xl text-yellow-500 font-bold mb-4 md:mb-6">
                         Support That Continues Even After the Handover
                     </p>
-                    <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed text-justify md:text-justify [text-align-last:left]">
+                    <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed text-left md:text-justify [text-align-last:left]">
                         Our relationship doesn't end once the papers are signed. Whether it's operational guidance, transition planning, or coordination with government authorities, we make sure the post-handover phase is just as smooth.
                     </p>
                 </div>
@@ -423,7 +442,7 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
                             <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">
                                 {item.title}
                             </h4>
-                            <p className="text-gray-700 text-sm md:text-base text-justify md:text-justify [text-align-last:left]">
+                            <p className="text-gray-700 text-sm md:text-base text-left md:text-justify [text-align-last:left]">
                                 {item.description}
                             </p>
                         </div>
@@ -474,10 +493,15 @@ const BusinessBuySellPage = ({ handleNavClick }) => {
         <section id="faq" className="py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-  <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
-    Business Buy & Sell FAQs
-  </h2>
-</div>
+            <div className="flex justify-center mb-3 sm:mb-4">
+              {/* <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-yellow-500/20 rounded-full mb-3 sm:mb-4">
+                <i className="fas fa-question-circle text-yellow-500 text-3xl"></i>
+              </div> */}
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 mb-6">
+              Business Buy & Sell <span className="text-yellow-500">FAQs</span>
+            </h2>
+          </div>
             <div className="space-y-6">
               {safeBusinessFAQ.map((item, index) => (
                 <AccordionItem 

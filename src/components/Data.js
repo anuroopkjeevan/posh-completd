@@ -3,16 +3,20 @@ export const contactDetails = {
     uae: {
         address: 'Office 310, Sarah Building, Al Garhoud, Dubai, UAE',
         addressDetail: 'Posh Businessmen Services LLC, Office 310, Sarah Building, Al Garhoud, Dubai, UAE',
-        email: 'admin@poshconsultants.com',
-        phone: ' +971 565747444',
-        telPrefix: 'Tel'
+        email: 'info@poshconsultants.com',
+        email1: 'admin@poshconsultants.com',
+        phone: ' +971 56 57 47 444',
+        phone2: ' +971 433 47 133',
+        telPrefix: 'Tel',
+        lanPrefix: 'Lan'
     },
     india: {
         address: 'Sai Building Opp. EMC Hospital, Palarivattom, Cochin, Kerala, India.',
         addressDetail: 'Sai Building Opp. EMC Hospital, Palarivattom, Cochin 2, Kerala, India.',
-        phone1: '+91 95 44 55 99 88',
+        // phone1: '+91 95 44 55 99 88',
         phone2: '+91 90 20 60 88 88',
-        telPrefix: 'Tel'
+        telPrefix: 'Tel',
+
     }
 };
 // Data.js

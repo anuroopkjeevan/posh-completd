@@ -39,7 +39,7 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
                 Professional Guidance for High-Value Property Decisions
             </p>
             <div className="max-w-4xl mx-auto">
-                <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-normal text-justify">
+                <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-normal text-left md:text-justify">
                     POSH Consultants assists clients with buying and selling commercial-ready properties, offering transparent advice and complete transaction management for high-value real estate deals.
                 </p>
             </div>
@@ -54,7 +54,7 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
                 What We Help You{" "}
                 <span className="text-yellow-500">Buy or Sell</span>
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2 md:px-0 text-justify md:text-justify [text-align-last:center]">
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2 md:px-0 text-left md:text-justify [text-align-last:center]">
                 Comprehensive commercial real estate solutions for all your business needs.
             </p>
         </div>
@@ -117,7 +117,7 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
                         For{" "}
                         <span className="text-yellow-500">Buyers</span>
                     </h2>
-                    <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8 text-justify md:text-justify [text-align-last:left]">
+                    <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8 text-left md:text-justify [text-align-last:left]">
                         We understand your business goals, investment expectations, operational requirements, and budget. Based on this, we present the most suitable land parcels, warehouses, or commercial units.
                     </p>
 
@@ -126,7 +126,7 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
                             <div className="w-9 h-9 md:w-10 md:h-10 bg-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0">
                                 <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-white" />
                             </div>
-                            <span className="text-justify md:text-justify [text-align-last:left] flex-1">
+                            <span className="text-left flex-1">
                                 We Compare:
                             </span>
                         </h3>
@@ -150,33 +150,34 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
                             ))}
                         </div>
 
-                        <p className="text-base md:text-lg text-gray-700 italic mt-4 text-justify md:text-justify [text-align-last:left]">
+                        <p className="text-base md:text-lg text-gray-700 italic mt-4 text-left md:text-justify [text-align-last:left]">
                             Based on this, we present the most suitable land parcels, warehouses, or commercial units — comparing location advantages, zoning, ROI potential, accessibility, and future development possibilities.
                         </p>
 
                         <button
                             onClick={() => handleNavClick('contactpage')}
-                            className="w-full mt-6 md:mt-8 flex items-center justify-between px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 group"
+                            className="w-full mt-6 md:mt-8 flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm sm:text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 group overflow-hidden"
                         >
-                            <div className="flex items-center gap-3 flex-1">
+                            <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                                 <Icon path="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" />
-                                <span className="text-left whitespace-nowrap">
+                                <span className="text-left truncate">
                                     Find Commercial Properties
                                 </span>
                             </div>
-                            <span className="flex-shrink-0 ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
+                            <span className="flex-shrink-0 ml-2 group-hover:translate-x-2 transition-transform duration-300 text-xl">→</span>
                         </button>
                     </div>
                 </div>
             </div>
 
             {/* Image */}
-            <div className="relative">
-                <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full">
+                <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                     <img
                         src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80"
                         alt="Commercial property buyers in UAE"
-                        className="object-cover w-full h-full"
+                        className="object-cover w-full h-full max-w-full"
+                        loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                 </div>
@@ -190,12 +191,13 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
                     {/* Image */}
-                   <div className="relative order-2 lg:order-1">
-  <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                   <div className="relative order-2 lg:order-1 w-full">
+  <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
     <img
       src="https://images.unsplash.com/photo-1541336032412-2048a678540d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1373&q=80"
       alt="Modern glass office tower in a UAE business district"
-      className="object-cover w-full h-full"
+      className="object-cover w-full h-full max-w-full"
+      loading="lazy"
     />
     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
   </div>
@@ -207,7 +209,7 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
                                 For{" "}
                                 <span className="text-yellow-500">Sellers</span>
                             </h2>
-                            <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8 text-justify md:text-justify [text-align-last:left]">
+                            <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8 text-left md:text-justify [text-align-last:left]">
                                 We gather detailed information about your property, position it correctly in the market, and connect you with qualified and serious buyers.
                             </p>
 
@@ -216,7 +218,7 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
                                     <div className="w-9 h-9 md:w-10 md:h-10 bg-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0">
                                         <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-white" />
                                     </div>
-                                    <span className="text-justify md:text-justify [text-align-last:left] flex-1">
+                                    <span className="text-left flex-1">
                                         Our Approach Ensures:
                                     </span>
                                 </h3>
@@ -240,21 +242,21 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
                                     ))}
                                 </div>
 
-                                <p className="text-base md:text-lg text-gray-700 italic mt-4 text-justify md:text-justify [text-align-last:left]">
+                                <p className="text-base md:text-lg text-gray-700 italic mt-4 text-left md:text-justify [text-align-last:left]">
                                     Our approach ensures a smooth negotiation, transparent communication, and a strong closing price.
                                 </p>
 
                                 <button
     onClick={() => handleNavClick('contactpage')}
-    className="w-full mt-6 md:mt-8 flex items-center justify-between px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 group"
+    className="w-full mt-6 md:mt-8 flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm sm:text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 group overflow-hidden"
 >
-    <div className="flex items-center gap-3 flex-1">
+    <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
         <Icon path="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" />
-        <span className="text-left whitespace-nowrap">
+        <span className="text-left truncate">
             Sell Commercial Property
         </span>
     </div>
-    <span className="flex-shrink-0 ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
+    <span className="flex-shrink-0 ml-2 group-hover:translate-x-2 transition-transform duration-300 text-xl">→</span>
 </button>
                             </div>
                         </div>
@@ -280,7 +282,7 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
                         Why Clients{" "}
                         <span className="text-yellow-500">Trust Us</span>
                     </h2>
-                    <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto px-2 md:px-0 text-justify md:text-justify [text-align-last:center]">
+                    <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto px-2 md:px-0 text-left md:text-justify [text-align-last:center]">
                         In a market filled with pressure tactics and unclear communication, POSH Consultants stands out by staying true to our values.
                     </p>
                 </div>
@@ -336,7 +338,7 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
                 Complete{" "}
                 <span className="text-yellow-500">Process Management</span>
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2 md:px-0 text-justify md:text-justify [text-align-last:center]">
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2 md:px-0 text-left md:text-justify [text-align-last:center]">
                 We assist with documentation, legal checks, agreements, NOCs, inspections, and all the steps involved in commercial or land transactions — giving you a seamless, worry-free experience.
             </p>
         </div>
@@ -400,7 +402,7 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
                     Honest Advice. Real Transparency.{" "}
                     <span className="text-yellow-500">Genuine Care.</span>
                 </h2>
-                <p className="text-base md:text-lg text-gray-300 mb-8 max-w-3xl mx-auto text-justify md:text-justify [text-align-last:center] px-4 md:px-0">
+                <p className="text-base md:text-lg text-gray-300 mb-8 max-w-3xl mx-auto text-left md:text-justify [text-align-last:center] px-4 md:px-0">
                     In a market filled with pressure tactics and unclear communication, POSH Consultants stands out by staying true to our values: honesty, clarity, and trust.
                 </p>
                 
@@ -425,7 +427,7 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
                     </div>
                 </div>
 
-                <p className="text-base md:text-lg text-gray-300 mb-8 max-w-3xl mx-auto text-justify md:text-justify [text-align-last:center] px-4 md:px-0">
+                <p className="text-base md:text-lg text-gray-300 mb-8 max-w-3xl mx-auto text-left md:text-justify [text-align-last:center] px-4 md:px-0">
                     We don't just help you buy or sell property — we help you make the right decision.
                 </p>
 
@@ -446,7 +448,14 @@ const CommercialRealEstatePage = ({ handleNavClick }) => {
         <section id="faq" className="py-16 md:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold md:font-extrabold text-gray-900 mb-4 md:mb-8">Commercial Real Estate FAQs</h2>
+              <div className="flex justify-center mb-3 sm:mb-4">
+                {/* <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-yellow-500/20 rounded-full mb-3 sm:mb-4">
+                  <i className="fas fa-question-circle text-yellow-500 text-3xl"></i>
+                </div> */}
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 mb-4 md:mb-8">
+                Commercial Real Estate <span className="text-yellow-500">FAQs</span>
+              </h2>
             </div>
             <div className="space-y-4 md:space-y-6">
               {safeCommercialFAQ.map((item, index) => (

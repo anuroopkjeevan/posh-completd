@@ -310,10 +310,13 @@ const HomePage = ({ handleNavClick }) => {
 
         {/* Background Image */}
         <div 
-  className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed z-0"
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0"
 
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
           }}
         >
           <div className="absolute inset-0 bg-black/20"></div>
@@ -417,10 +420,10 @@ const HomePage = ({ handleNavClick }) => {
           </ScrollReveal>
 
           <StaggerChildren staggerDelay={150} direction="up" threshold={0.1}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-12 sm:mb-16 items-stretch">
               {/* For Buyers */}
               <ScrollReveal direction="left" threshold={0.1}>
-                <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl border-2 border-yellow-500 hover:shadow-yellow-500/20 transition-all duration-300 group hover:scale-[1.02]">
+                <div className="h-full flex flex-col bg-gradient-to-br from-gray-800 to-gray-900 p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl border-2 border-yellow-500 hover:shadow-yellow-500/20 transition-all duration-300 group hover:scale-[1.02]">
                   <div className="text-center mb-4 sm:mb-6">
                     <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-yellow-500 rounded-full mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
                       <i className="fas fa-search-dollar text-white text-xl"></i>
@@ -431,7 +434,7 @@ const HomePage = ({ handleNavClick }) => {
                   <p className="text-gray-300 text-xs sm:text-sm mb-4 sm:mb-6 text-center leading-relaxed">
                     We take time to understand your requirements — your sector preferences, budget, expectations, experience, and long-term goals.
                   </p>
-                  <ul className="space-y-2 sm:space-y-3">
+                  <ul className="space-y-2 sm:space-y-3 flex-grow">
                     {[
                       "Understand your needs and expectations",
                       "Present suitable business opportunities",
@@ -461,7 +464,7 @@ const HomePage = ({ handleNavClick }) => {
 
               {/* For Sellers */}
               <ScrollReveal direction="right" threshold={0.1}>
-                <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl border-2 border-yellow-500 hover:shadow-yellow-500/20 transition-all duration-300 group hover:scale-[1.02]">
+                <div className="h-full flex flex-col bg-gradient-to-br from-gray-800 to-gray-900 p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-xl border-2 border-yellow-500 hover:shadow-yellow-500/20 transition-all duration-300 group hover:scale-[1.02]">
                   <div className="text-center mb-4 sm:mb-6">
                     <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-yellow-500 rounded-full mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
                       <i className="fas fa-chart-line text-white text-xl"></i>
@@ -472,7 +475,7 @@ const HomePage = ({ handleNavClick }) => {
                   <p className="text-gray-300 text-xs sm:text-sm mb-4 sm:mb-6 text-center leading-relaxed">
                     We collect every important detail about your business and present it professionally to the right buyers or investors.
                   </p>
-                  <ul className="space-y-2 sm:space-y-3">
+                  <ul className="space-y-2 sm:space-y-3 flex-grow">
                     {[
                       "Study your business thoroughly",
                       "Prepare complete business profile",
@@ -578,10 +581,10 @@ const HomePage = ({ handleNavClick }) => {
           </ScrollReveal>
 
           <StaggerChildren staggerDelay={150} direction="up" threshold={0.1}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-stretch">
               {/* Residential Real Estate */}
               <ScrollReveal direction="left" threshold={0.1}>
-                <div className="bg-gradient-to-br from-gray-50 to-white p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 hover:border-yellow-500 transition-all duration-300 group hover:scale-[1.02]">
+                <div className="h-full flex flex-col bg-gradient-to-br from-gray-50 to-white p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 hover:border-yellow-500 transition-all duration-300 group hover:scale-[1.02]">
                   <div className="text-center mb-4 sm:mb-6">
                     <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-yellow-500 rounded-full mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                       <i className="fas fa-home text-white text-2xl"></i>
@@ -609,13 +612,13 @@ const HomePage = ({ handleNavClick }) => {
                     </div>
                   </div>
 
-                  <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6 text-center leading-relaxed">
+                  <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6 text-center leading-relaxed flex-grow">
                     Find your perfect home or investment property with our comprehensive residential real estate services.
                   </p>
 
                   <MagneticButton 
                     onClick={() => handleNavClick('residentialrealestate')}
-                    className="w-full py-3 sm:py-4 bg-yellow-500 text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-yellow-400 transition-colors duration-300 border-2 border-yellow-500 flex items-center justify-center gap-2 relative overflow-hidden group"
+                    className="w-full mt-auto py-3 sm:py-4 bg-yellow-500 text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-yellow-400 transition-colors duration-300 border-2 border-yellow-500 flex items-center justify-center gap-2 relative overflow-hidden group"
                   >
                     <span className="relative z-10 flex items-center gap-2">
                       <i className="fas fa-search text-base"></i>
@@ -629,7 +632,7 @@ const HomePage = ({ handleNavClick }) => {
 
               {/* Commercial Real Estate */}
               <ScrollReveal direction="right" threshold={0.1}>
-                <div className="bg-gradient-to-br from-gray-50 to-white p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 hover:border-yellow-500 transition-all duration-300 group hover:scale-[1.02]">
+                <div className="h-full flex flex-col bg-gradient-to-br from-gray-50 to-white p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 hover:border-yellow-500 transition-all duration-300 group hover:scale-[1.02]">
                   <div className="text-center mb-4 sm:mb-6">
                     <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-yellow-500 rounded-full mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                       <i className="fas fa-warehouse text-white text-2xl"></i>
@@ -657,13 +660,13 @@ const HomePage = ({ handleNavClick }) => {
                     </div>
                   </div>
 
-                  <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6 text-center leading-relaxed">
+                  <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6 text-center leading-relaxed flex-grow">
                     Professional guidance for high-value commercial property decisions and business expansion.
                   </p>
 
                   <MagneticButton 
                     onClick={() => handleNavClick('commercialrealestate')}
-                    className="w-full py-3 sm:py-4 bg-transparent text-gray-900 font-semibold text-sm sm:text-base rounded-lg hover:bg-yellow-500 hover:text-white transition-colors duration-300 border-2 border-yellow-500 flex items-center justify-center gap-2 relative overflow-hidden group"
+                    className="w-full mt-auto py-3 sm:py-4 bg-transparent text-gray-900 font-semibold text-sm sm:text-base rounded-lg hover:bg-yellow-500 hover:text-white transition-colors duration-300 border-2 border-yellow-500 flex items-center justify-center gap-2 relative overflow-hidden group"
                   >
                     <span className="relative z-10 flex items-center gap-2">
                       <i className="fas fa-chart-line text-base"></i>
@@ -734,7 +737,7 @@ const HomePage = ({ handleNavClick }) => {
                           : "contactpage"
                       )
                     }
-                    className="text-yellow-500 font-semibold hover:text-yellow-400 transition flex items-center text-sm group"
+                    className="text-yellow-500 font-semibold hover:text-yellow-400 transition flex items-center text-sm group cursor-pointer"
                   >
                     Learn More
                     <i className="fas fa-arrow-right ml-2 text-base group-hover:translate-x-1 transition-transform"></i>
@@ -831,14 +834,16 @@ const HomePage = ({ handleNavClick }) => {
   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <ScrollReveal direction="down" threshold={0.2}>
       <div className="text-center mb-12">
-        <div className="flex justify-center mb-4">
-          <FAQIcon className="w-20 h-20 md:w-24 md:h-24 text-5xl" />
+        <div className="flex justify-center mb-3 sm:mb-4">
+          <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-yellow-500/20 rounded-full mb-3 sm:mb-4">
+            <i className="fas fa-question-circle text-yellow-500 text-3xl"></i>
+          </div>
         </div>
-        <h2 className="text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight uppercase">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
           Frequently Asked <span className="text-yellow-500">Questions</span>
         </h2>
-        <p className="text-lg text-gray-600 mt-4">
-          <i className="fas fa-comments text-yellow-500 text-2xl mr-2"></i>
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-4">
+          <i className="fas fa-comments text-yellow-500 text-xl mr-2"></i>
           Quick answers to our most common questions
         </p>
       </div>

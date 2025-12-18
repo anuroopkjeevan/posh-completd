@@ -4,6 +4,15 @@ import { footerServices } from './Data.js';
 import logoImage from '../assets/posh_logo_cropped.png';
 
 const Footer = ({ handleNavClick, contactDetails }) => {
+    // Map service names to their corresponding page identifiers
+    // These must match what's used in App.js handleNavClick
+    const servicePageMap = {
+        'Business Setup': 'businesssetup',
+        'Commercial Real Estate': 'commercial', 
+        'Residential Real Estate': 'residential',
+        'Golden Visa': 'goldenvisa',
+        'Business Broking': 'buyingselling'  // This matches your navItems
+    };
     return (
         <footer className="bg-gray-900 border-t border-gray-700 pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,7 +83,7 @@ const Footer = ({ handleNavClick, contactDetails }) => {
                             {footerServices.map((service, index) => (
                                 <li key={index}>
                                     <button 
-                                        onClick={() => handleNavClick('businesssetup')} 
+                                        onClick={() => handleNavClick(servicePageMap[service])} 
                                         className="text-gray-400 hover:text-yellow-500 transition text-sm focus:outline-none flex items-center group"
                                     >
                                         <Icon path="M9 5l7 7-7 7" className="w-3 h-3 mr-2 text-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -117,10 +126,6 @@ const Footer = ({ handleNavClick, contactDetails }) => {
                             <p className="flex items-start text-sm">
                                 <Icon path="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" className="w-4 h-4 mr-2 text-yellow-500 mt-0.5 flex-shrink-0" />
                                 {contactDetails.india.addressDetail}
-                            </p>
-                            <p className="flex items-center text-sm hover:text-yellow-500 transition duration-300">
-                                <Icon path="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" className="w-4 h-4 mr-2 text-yellow-500 flex-shrink-0" />
-                                <a href={`tel:${contactDetails.india.phone1}`}>{contactDetails.india.phone1}</a>
                             </p>
                             <p className="flex items-center text-sm hover:text-yellow-500 transition duration-300">
                                 <Icon path="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" className="w-4 h-4 mr-2 text-yellow-500 flex-shrink-0" />

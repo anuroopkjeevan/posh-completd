@@ -64,11 +64,12 @@ const BusinessSetupPage = ({ handleNavClick }) => {
       <section id="mainland-formation" className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-500">
+            <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-500 w-full">
               <img
                 src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
                 alt="Business professionals discussing company formation documents in Dubai office"
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full max-w-full"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-yellow-500/10"></div>
             </div>
@@ -403,47 +404,8 @@ const BusinessSetupPage = ({ handleNavClick }) => {
       </h2>
       <div className="h-1 w-16 md:w-20 bg-yellow-500 mx-auto mt-3 md:mt-4 rounded-full"></div>
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-      {/* <div className="bg-gray-900 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
-        <div className="mb-4 md:mb-6">
-          <Icon 
-            path="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-            className="w-10 h-10 md:w-12 md:h-12 text-yellow-500"
-          />
-        </div>
-        <h3 className="text-lg md:text-xl font-bold text-white mb-4">Mainland Companies</h3>
-        <p className="text-gray-300 text-base md:text-lg text-justify md:text-justify [text-align-last:left]">
-          Complete mainland business setup with DED licensing for local and international trade operations.
-        </p>
-      </div>
-
-      <div className="bg-gray-900 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
-        <div className="mb-4 md:mb-6">
-          <Icon 
-            path="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-            className="w-10 h-10 md:w-12 md:h-12 text-yellow-500"
-          />
-        </div>
-        <h3 className="text-lg md:text-xl font-bold text-white mb-4">Free Zone Companies</h3>
-        <p className="text-gray-300 text-base md:text-lg text-justify md:text-justify [text-align-last:left]">
-          100% foreign ownership with tax benefits in Dubai's premier free zone locations.
-        </p>
-      </div>
-
-      <div className="bg-gray-900 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
-        <div className="mb-4 md:mb-6">
-          <Icon 
-            path="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-            className="w-10 h-10 md:w-12 md:h-12 text-yellow-500"
-          />
-        </div>
-        <h3 className="text-lg md:text-xl font-bold text-white mb-4">Offshore Companies</h3>
-        <p className="text-gray-300 text-base md:text-lg text-justify md:text-justify [text-align-last:left]">
-          International business setup with asset protection and tax optimization benefits.
-        </p>
-      </div> */}
-
-      <div className="bg-gray-900 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-6 lg:gap-8">
+      <div className="bg-gray-900 p-5 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
         <div className="mb-4 md:mb-6">
           <Icon 
             path="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
@@ -456,7 +418,7 @@ const BusinessSetupPage = ({ handleNavClick }) => {
         </p>
       </div>
 
-      <div className="bg-gray-900 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
+      <div className="bg-gray-900 p-5 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
         <div className="mb-4 md:mb-6">
           <Icon 
             path="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
@@ -469,7 +431,7 @@ const BusinessSetupPage = ({ handleNavClick }) => {
         </p>
       </div>
 
-      <div className="bg-gray-900 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
+      <div className="bg-gray-900 p-5 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
         <div className="mb-4 md:mb-6">
           <Icon 
             path="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
@@ -482,7 +444,7 @@ const BusinessSetupPage = ({ handleNavClick }) => {
         </p>
       </div>
 
-      <div className="bg-gray-900 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
+      <div className="bg-gray-900 p-5 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
         <div className="mb-4 md:mb-6">
           <Icon 
             path="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
@@ -495,7 +457,7 @@ const BusinessSetupPage = ({ handleNavClick }) => {
         </p>
       </div>
 
-      <div className="bg-gray-900 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
+      <div className="bg-gray-900 p-5 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
         <div className="mb-4 md:mb-6">
           <Icon 
             path="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
@@ -508,7 +470,7 @@ const BusinessSetupPage = ({ handleNavClick }) => {
         </p>
       </div>
 
-      <div className="bg-gray-900 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
+      <div className="bg-gray-900 p-5 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
         <div className="mb-4 md:mb-6">
           <Icon 
             path="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
@@ -521,7 +483,7 @@ const BusinessSetupPage = ({ handleNavClick }) => {
         </p>
       </div>
 
-      <div className="bg-gray-900 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
+      <div className="bg-gray-900 p-5 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-gray-800 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
         <div className="mb-4 md:mb-6">
           <Icon 
             path="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
@@ -603,8 +565,9 @@ const BusinessSetupPage = ({ handleNavClick }) => {
           </ul>
           
           {/* CTA Button */}
-          <button className="mt-6 md:mt-8 bg-yellow-500 text-black font-bold py-3 md:py-4 px-6 rounded-xl hover:bg-yellow-600 transition-all duration-300 transform hover:scale-[1.02] w-full text-lg">
-            Learn More
+          <button className="mt-6 md:mt-8 bg-yellow-500 text-black font-bold py-3 md:py-4 px-4 sm:px-6 rounded-xl hover:bg-yellow-600 transition-all duration-300 transform hover:scale-[1.02] w-full text-sm sm:text-base md:text-lg overflow-hidden inline-flex items-center justify-center gap-2 group cursor-pointer">
+            <span>Learn More</span>
+            <Icon path="M9 5l7 7-7 7" className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>
@@ -651,8 +614,9 @@ const BusinessSetupPage = ({ handleNavClick }) => {
           </ul>
           
           {/* CTA Button */}
-          <button className="mt-6 md:mt-8 bg-yellow-500 text-black font-bold py-3 md:py-4 px-6 rounded-xl hover:bg-yellow-600 transition-all duration-300 transform hover:scale-[1.02] w-full text-lg">
-            Learn More
+          <button className="mt-6 md:mt-8 bg-yellow-500 text-black font-bold py-3 md:py-4 px-4 sm:px-6 rounded-xl hover:bg-yellow-600 transition-all duration-300 transform hover:scale-[1.02] w-full text-sm sm:text-base md:text-lg overflow-hidden inline-flex items-center justify-center gap-2 group cursor-pointer">
+            <span>Learn More</span>
+            <Icon path="M9 5l7 7-7 7" className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>
@@ -699,8 +663,9 @@ const BusinessSetupPage = ({ handleNavClick }) => {
           </ul>
           
           {/* CTA Button */}
-          <button className="mt-6 md:mt-8 bg-yellow-500 text-black font-bold py-3 md:py-4 px-6 rounded-xl hover:bg-yellow-600 transition-all duration-300 transform hover:scale-[1.02] w-full text-lg">
-            Learn More
+          <button className="mt-6 md:mt-8 bg-yellow-500 text-black font-bold py-3 md:py-4 px-4 sm:px-6 rounded-xl hover:bg-yellow-600 transition-all duration-300 transform hover:scale-[1.02] w-full text-sm sm:text-base md:text-lg overflow-hidden inline-flex items-center justify-center gap-2 group cursor-pointer">
+            <span>Learn More</span>
+            <Icon path="M9 5l7 7-7 7" className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>
@@ -745,12 +710,17 @@ const BusinessSetupPage = ({ handleNavClick }) => {
       <section id="faq" className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold md:font-extrabold text-gray-900 mb-3 md:mb-4">
+            <div className="flex justify-center mb-3 sm:mb-4">
+              {/* <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-yellow-500/20 rounded-full mb-3 sm:mb-4">
+                <i className="fas fa-question-circle text-yellow-500 text-3xl"></i>
+              </div> */}
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 mb-3 md:mb-4">
               Frequently Asked{" "}
               <span className="text-yellow-500">Questions</span>
             </h2>
             <div className="h-1 w-16 md:w-20 bg-yellow-500 mx-auto mt-3 md:mt-4 rounded-full mb-6 md:mb-8"></div>
-            <p className="text-base md:text-lg text-gray-600 text-justify md:text-justify [text-align-last:center]">
+            <p className="text-base md:text-lg text-gray-600 text-left md:text-justify [text-align-last:center]">
               <Icon 
                 path="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 className="w-5 h-5 inline mr-2 text-yellow-500"

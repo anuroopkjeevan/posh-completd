@@ -1,161 +1,206 @@
-import React from 'react';
-import { MapPin, Phone, Mail } from '../components/SharedComponents.jsx';
+import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { MapPin, Phone, Mail, Icon } from '../components/SharedComponents.jsx';
 import { contactDetails, contactServiceOptions } from '../components/Data.js';
 
-const ContactPage = () => (
+const ContactPage = () => {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        'service_cesd6xk',
+        'template_rqnz7u4',
+        e.target,
+        'gMnwuBkg-JdrEmXB7'
+      )
+      .then(() => {
+        setSuccess(true);
+        e.target.reset();
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
+      });
+  };
+
+  return (
     <>
-    {/* Contact Hero */}
-<section className="pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-gray-800 to-gray-900 border-b border-yellow-500 relative overflow-hidden">
-    {/* Gold Pattern Overlay */}
-    <div className="absolute inset-0 opacity-5 z-0" 
-         style={{
-             backgroundImage: `radial-gradient(circle at 20% 80%, #e8be69 0%, transparent 50%),
+      {/* Contact Hero */}
+      <section className="pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-gray-800 to-gray-900 border-b border-yellow-500 relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-5 z-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 20% 80%, #e8be69 0%, transparent 50%),
                               radial-gradient(circle at 80% 20%, #e8be69 0%, transparent 50%),
                               radial-gradient(circle at 40% 40%, #e8be69 0%, transparent 50%)`
-         }}>
-    </div>
-
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center">
-            <p className="text-yellow-500 text-sm md:text-lg font-medium mb-6 md:mb-4 tracking-normal">
-                Home / Contact Us
+          }}
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            <p className="text-yellow-500 text-sm md:text-lg font-medium mb-6">
+              Home / Contact Us
             </p>
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold md:font-extrabold leading-tight text-white mb-6 md:mb-8 tracking-tight">
-                NEED ANY <span className="text-yellow-500">HELP</span>?
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-6">
+              NEED ANY <span className="text-yellow-500">HELP</span>?
             </h1>
-            <div className="mt-6 md:mt-8 max-w-4xl mx-auto space-y-4">
-                <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-normal">
-                    Get in touch with us.
-                </p>
-                <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-normal">
-                If you’re looking for reliable experts in business buying, selling, business setup, and real estate services in Dubai, contact Posh Consultants today.
-                </p>
-            </div>
+            <p className="text-base md:text-lg text-gray-300">
+              Get in touch with us. We’ll respond quickly.
+            </p>
+          </div>
         </div>
-    </div>
-</section>
-        {/* Contact Form & Details Section */}
-        <section className="py-16 md:py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
-                    {/* Contact Form */}
-                    <div className="lg:col-span-2 bg-gray-50 p-6 md:p-8 rounded-2xl shadow-xl border border-gray-200">
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold md:font-extrabold text-gray-900 mb-2 tracking-tight">SEND US EMAIL</h2>
-                        <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 tracking-normal">Feel free to write.</p>
+      </section>
 
-                        <form className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                                <input 
-                                    type="text" 
-                                    placeholder="Your Name" 
-                                    className="w-full p-3 md:p-4 rounded-lg bg-white border border-gray-300 text-gray-900 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition duration-300 tracking-normal" 
-                                    required 
-                                />
-                                <input 
-                                    type="email" 
-                                    placeholder="Your Email" 
-                                    className="w-full p-3 md:p-4 rounded-lg bg-white border border-gray-300 text-gray-900 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition duration-300 tracking-normal" 
-                                    required 
-                                />
-                            </div>
-                            <select 
-                                className="w-full p-3 md:p-4 rounded-lg bg-white border border-gray-300 text-gray-600 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition duration-300 tracking-normal"
-                                defaultValue=""
-                            >
-                                {contactServiceOptions.map((option, index) => (
-                                    <option key={index} value={option} disabled={index === 0}>{option}</option>
-                                ))}
-                            </select>
-                            <textarea 
-                                placeholder="Your Message" 
-                                rows="5" 
-                                className="w-full p-3 md:p-4 rounded-lg bg-white border border-gray-300 text-gray-900 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition duration-300 resize-none tracking-normal" 
-                                required
-                            ></textarea>
-                            <button 
-                                type="submit" 
-                                className="w-full py-3 md:py-4 bg-yellow-500 text-white font-bold rounded-lg shadow-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-[1.01] active:scale-[0.99] border-2 border-yellow-500 tracking-normal"
-                            >
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
+      {/* Contact Form & Details */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
 
-                    {/* Contact Details */}
-                    <div className="space-y-6 md:space-y-8">
-                        {/* UAE Office */}
-                        <div className="bg-white p-5 md:p-6 rounded-2xl shadow-xl border border-gray-200 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
-                            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 flex items-center tracking-tight">
-                                <MapPin className="w-6 h-6 md:w-7 md:h-7 mr-3 text-yellow-500 flex-shrink-0" /> 
-                                <span>UAE Headquarters</span>
-                            </h3>
-                            <div className="space-y-2 md:space-y-3 text-gray-700">
-                                <div className="flex items-start">
-                                    <MapPin className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 mt-1 text-yellow-500 flex-shrink-0" />
-                                    <span className="text-sm md:text-base leading-relaxed tracking-normal">{contactDetails.uae.addressDetail}</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <Phone className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 text-yellow-500 flex-shrink-0" />
-                                    <span className="text-sm md:text-base tracking-normal">
-                                        {contactDetails.uae.telPrefix}: 
-                                        <a href={`tel:${contactDetails.uae.phone}`} className="ml-1 hover:text-gray-900 transition font-medium">
-                                            {contactDetails.uae.phone}
-                                        </a>
-                                    </span>
-                                </div>
-                                <div className="flex items-center">
-                                    <Mail className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 text-yellow-500 flex-shrink-0" />
-                                    <span className="text-sm md:text-base tracking-normal">
-                                        Email: 
-                                        <a href={`mailto:${contactDetails.uae.email}`} className="ml-1 hover:text-gray-900 transition font-medium">
-                                            {contactDetails.uae.email}
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+            {/* Contact Form */}
+            <div className="lg:col-span-2 bg-gray-50 p-6 md:p-8 rounded-2xl shadow-xl border">
+              <h2 className="text-3xl font-bold mb-2">SEND US EMAIL</h2>
+              <p className="text-gray-600 mb-6">Feel free to write.</p>
 
-                        {/* India Office */}
-                        <div className="bg-white p-5 md:p-6 rounded-2xl shadow-xl border border-gray-200 hover:border-yellow-500 transition duration-300 hover:shadow-yellow-500/20">
-                            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 flex items-center tracking-tight">
-                                <MapPin className="w-6 h-6 md:w-7 md:h-7 mr-3 text-yellow-500 flex-shrink-0" /> 
-                                <span>India Branch</span>
-                            </h3>
-                            <div className="space-y-2 md:space-y-3 text-gray-700">
-                                <div className="flex items-start">
-                                    <MapPin className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 mt-1 text-yellow-500 flex-shrink-0" />
-                                    <span className="text-sm md:text-base leading-relaxed tracking-normal">{contactDetails.india.addressDetail}</span>
-                                </div>
-                                <div className="flex items-start">
-                                    <Phone className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 mt-1 text-yellow-500 flex-shrink-0" />
-                                    <div className="text-sm md:text-base">
-                                        <span className="font-medium tracking-normal">{contactDetails.india.telPrefix}:</span>
-                                        <div className="ml-1 mt-1">
-                                            <a href={`tel:${contactDetails.india.phone1}`} className="block hover:text-gray-900 transition tracking-normal">
-                                                {contactDetails.india.phone1}
-                                            </a>
-                                            <a href={`tel:${contactDetails.india.phone2}`} className="block hover:text-gray-900 transition mt-1 tracking-normal">
-                                                {contactDetails.india.phone2}
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="flex items-center">
-                                    <Mail className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 text-yellow-500 flex-shrink-0" />
-                                    <span className="text-sm md:text-base tracking-normal">
-                                        Email: 
-                                        <a href={`mailto:${contactDetails.uae.email}`} className="ml-1 hover:text-gray-900 transition font-medium">
-                                            {contactDetails.uae.email}
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <input
+                    type="text"
+                    name="from_name"
+                    placeholder="Your Name"
+                    required
+                    className="w-full p-4 rounded-lg border focus:ring-2 focus:ring-yellow-500"
+                  />
+                  <input
+                    type="email"
+                    name="from_email"
+                    placeholder="Your Email"
+                    required
+                    className="w-full p-4 rounded-lg border focus:ring-2 focus:ring-yellow-500"
+                  />
                 </div>
+
+                <select
+                  name="service"
+                  required
+                  defaultValue=""
+                  className="w-full p-4 rounded-lg border text-gray-600 focus:ring-2 focus:ring-yellow-500"
+                >
+                  {contactServiceOptions.map((option, index) => (
+                    <option key={index} value={option} disabled={index === 0}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+
+                <textarea
+                  name="message"
+                  rows="5"
+                  placeholder="Your Message"
+                  required
+                  className="w-full p-4 rounded-lg border resize-none focus:ring-2 focus:ring-yellow-500"
+                />
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-4 bg-yellow-500 text-white font-bold rounded-lg
+                             hover:bg-yellow-400 transition inline-flex items-center
+                             justify-center gap-2 disabled:opacity-70"
+                >
+                  {loading ? (
+                    <>
+                      <svg
+                        className="animate-spin h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        />
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v8z"
+                        />
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Icon path="M9 5l7 7-7 7" className="w-5 h-5" />
+                    </>
+                  )}
+                </button>
+              </form>
             </div>
-        </section>
+
+            {/* Contact Details */}
+            <div className="space-y-8">
+              <div className="bg-white p-6 rounded-2xl shadow-xl border">
+                <h3 className="text-2xl font-bold flex items-center mb-4">
+                  <MapPin className="w-6 h-6 mr-3 text-yellow-500" /> UAE
+                </h3>
+                <p className="mb-2">{contactDetails.uae.addressDetail}</p>
+                <p>
+                  <Phone className="inline w-4 h-4 mr-2 text-yellow-500" />
+                  {contactDetails.uae.phone}
+                </p>
+                <p>
+                  <Mail className="inline w-4 h-4 mr-2 text-yellow-500" />
+                  {contactDetails.uae.email}
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl shadow-xl border">
+                <h3 className="text-2xl font-bold flex items-center mb-4">
+                  <MapPin className="w-6 h-6 mr-3 text-yellow-500" /> India
+                </h3>
+                <p className="mb-2">{contactDetails.india.addressDetail}</p>
+                <p>
+                  <Phone className="inline w-4 h-4 mr-2 text-yellow-500" />
+                  {contactDetails.india.phone2}
+                </p>
+                <p>
+                  <Mail className="inline w-4 h-4 mr-2 text-yellow-500" />
+                  {contactDetails.uae.email}
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Success Modal */}
+      {success && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-2xl text-center max-w-sm w-full shadow-xl">
+            <h3 className="text-2xl font-bold mb-2">Message Sent </h3>
+            <p className="text-gray-600 mb-6">
+              Thank you for contacting us. We’ll get back to you soon.
+            </p>
+            <button
+              onClick={() => setSuccess(false)}
+              className="px-6 py-3 bg-yellow-500 text-white rounded-lg font-bold hover:bg-yellow-400"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      )}
     </>
-);
+  );
+};
 
 export default ContactPage;

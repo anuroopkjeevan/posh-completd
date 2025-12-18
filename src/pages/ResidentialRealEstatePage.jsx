@@ -38,7 +38,7 @@ const ResidentialRealEstatePage = ({ handleNavClick }) => {
                     Off-Plan, Ready, and Everything in Between
                 </p>
                 <div className="max-w-4xl mx-auto">
-                    <p className="text-base md:text-lg text-gray-300 leading-relaxed text-justify">
+                    <p className="text-base md:text-lg text-gray-300 leading-relaxed text-left md:text-justify">
                         At POSH Consultants, we help clients navigate the UAE's residential real estate market with complete clarity and transparency. Whether you're exploring off-plan opportunities or looking to buy or sell a ready property, we guide you through every step with honesty, expertise, and a commitment to finding what's truly right for you.
                     </p>
                 </div>
@@ -51,12 +51,13 @@ const ResidentialRealEstatePage = ({ handleNavClick }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 {/* Image - Updated to a proper off-plan property image */}
-                <div className="relative">
-                    <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative w-full">
+                    <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                         <img
                             src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80"
                             alt="Luxury off-plan residential apartments in UAE"
-                            className="object-cover w-full h-full"
+                            className="object-cover w-full h-full max-w-full"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                         <div className="absolute top-4 left-4 bg-yellow-500 text-white px-4 py-2 rounded-lg font-bold text-sm">
@@ -72,7 +73,7 @@ const ResidentialRealEstatePage = ({ handleNavClick }) => {
                             Off-Plan Properties with{" "}
                             <span className="text-yellow-500">Excellent Potential</span>
                         </h2>
-                        <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8 text-justify">
+                        <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8 text-left md:text-justify">
                             Off-plan projects in the UAE offer excellent potential — from flexible payment plans to attractive long-term returns. We help you understand each project thoroughly and choose options that align with your lifestyle or investment goals.
                         </p>
 
@@ -81,7 +82,7 @@ const ResidentialRealEstatePage = ({ handleNavClick }) => {
                                 <div className="w-9 h-9 md:w-10 md:h-10 bg-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0">
                                     <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-white" />
                                 </div>
-                                <span className="text-justify flex-1">
+                                <span className="text-left flex-1">
                                     What We Do for Off-Plan Clients
                                 </span>
                             </h3>
@@ -108,13 +109,22 @@ const ResidentialRealEstatePage = ({ handleNavClick }) => {
                             <p className="text-base md:text-lg text-gray-700 italic mt-4 text-justify">
                                 Our approach ensures you can confidently choose the right off-plan project with full understanding of every detail.
                             </p>
-
                             <button
-                                onClick={() => handleNavClick('contactpage')}
-                                className="w-full mt-6 md:mt-8 flex items-center justify-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300"
-                            >
-                                <span className="whitespace-nowrap">Start Your Business Transaction</span>
-                            </button>
+    onClick={() => handleNavClick('contactpage')}
+    className="w-full mt-6 md:mt-8 inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm sm:text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 group overflow-hidden"
+>
+    <Icon 
+        path="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" 
+        className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" 
+    />
+    <span className="flex-1 text-left truncate">
+        Start Your Business Transaction
+    </span>
+    <Icon 
+        path="M9 5l7 7-7 7" 
+        className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0" 
+    />
+</button>
                         </div>
                     </div>
                 </div>
@@ -192,13 +202,13 @@ const ResidentialRealEstatePage = ({ handleNavClick }) => {
 
                             <button
                                 onClick={() => handleNavClick('contactpage')}
-                                className="w-full mt-6 md:mt-8 inline-flex items-center justify-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 group"
+                                className="w-full mt-6 md:mt-8 inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm sm:text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 group overflow-hidden"
                             >
                                 <Icon 
                                     path="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
                                     className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" 
                                 />
-                                <span className="flex-1 text-left">
+                                <span className="flex-1 text-left truncate">
                                     Find Your Dream Home
                                 </span>
                                 <Icon 
@@ -211,12 +221,13 @@ const ResidentialRealEstatePage = ({ handleNavClick }) => {
                 </div>
 
                 {/* Image */}
-                <div className="relative order-1 lg:order-2">
-                    <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative order-1 lg:order-2 w-full">
+                    <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl">
                         <img
                             src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
                             alt="Luxury ready property in UAE"
-                            className="object-cover w-full h-full"
+                            className="object-cover w-full h-full max-w-full"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                     </div>
@@ -230,12 +241,13 @@ const ResidentialRealEstatePage = ({ handleNavClick }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 {/* Image */}
-                <div className="relative">
-                    <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative w-full">
+                    <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                         <img
                             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1475&q=80"
                             alt="Selling property in UAE"
-                            className="object-cover w-full h-full"
+                            className="object-cover w-full h-full max-w-full"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                     </div>
@@ -308,13 +320,13 @@ const ResidentialRealEstatePage = ({ handleNavClick }) => {
 
                             <button
                                 onClick={() => handleNavClick('contactpage')}
-                                className="w-full mt-6 md:mt-8 inline-flex items-center justify-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 group"
+                                className="w-full mt-6 md:mt-8 inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm sm:text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 group overflow-hidden"
                             >
                                 <Icon 
                                     path="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
                                     className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" 
                                 />
-                                <span className="flex-1 text-left">
+                                <span className="flex-1 text-left truncate">
                                     Sell Your Property
                                 </span>
                                 <Icon 
@@ -466,7 +478,14 @@ const ResidentialRealEstatePage = ({ handleNavClick }) => {
       <section id="faq" className="py-16 md:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold md:font-extrabold text-gray-900 mb-4 md:mb-8">Residential Real Estate FAQs</h2>
+            <div className="flex justify-center mb-3 sm:mb-4">
+              {/* <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-yellow-500/20 rounded-full mb-3 sm:mb-4">
+                <i className="fas fa-question-circle text-yellow-500 text-3xl"></i>
+              </div> */}
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 mb-4 md:mb-8">
+              Residential Real Estate <span className="text-yellow-500">FAQs</span>
+            </h2>
           </div>
           <div className="space-y-4 md:space-y-6">
             {safeResidentialFAQ.map((item, index) => (

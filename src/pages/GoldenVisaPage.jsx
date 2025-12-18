@@ -36,18 +36,7 @@ const GoldenVisaPage = ({ handleNavClick }) => {
                 </span>
             </h1>
             
-            {/* 10-Year Highlight */}
-{/* <div className="mb-6 md:mb-8">
-    <div className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-yellow-500/20 border border-yellow-500 rounded-full">
-        <Icon 
-            path="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" 
-            className="w-5 h-5 md:w-6 md:h-6 text-yellow-500" 
-        />
-        <span className="text-white font-bold text-lg md:text-xl tracking-wide">
-            10-YEAR RESIDENCY VISA
-        </span>
-    </div>
-</div> */}
+
 
 <div className="mt-6 md:mt-8 max-w-4xl mx-auto space-y-4 md:space-y-6">
     <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-normal text-center md:text-left">
@@ -66,21 +55,20 @@ const GoldenVisaPage = ({ handleNavClick }) => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Image Section - Corrected */}
-            <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-500">
-                {/* Replace Logo with actual image */}
-                <img 
-                   src={Logo}// Replace with your actual image path
-                    alt="UAE Golden Visa illustration or related image"
-                    className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-yellow-500/10"></div>
-                
-                {/* 10-Year Badge on Image */}
-                <div className="absolute top-4 right-4 bg-yellow-500 text-white px-4 py-2 rounded-lg font-bold text-sm shadow-lg">
-                    10-YEAR VISA
-                </div>
-            </div>
-
+            <div className="relative aspect-[3/2] rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-500 w-full">
+  <img 
+    src={Logo}
+    alt="UAE Golden Visa illustration or related image"
+    className="w-full h-full object-cover"
+    loading="lazy"
+  />
+  <div className="absolute inset-0 bg-yellow-500/10"></div>
+  
+  {/* Keep badge only if image doesn't have it */}
+  <div className="absolute top-4 right-4 bg-yellow-500 text-white px-4 py-2 rounded-lg font-bold text-sm shadow-lg">
+    10-YEAR VISA
+  </div>
+</div>
             <div className="space-y-6">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold md:font-extrabold text-gray-900 mb-4 md:mb-6">
                     What is Golden Visa?
@@ -91,12 +79,13 @@ const GoldenVisaPage = ({ handleNavClick }) => {
                 
                 <button
                     onClick={() => handleNavClick('contactpage')}
-                    className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 border-2 border-yellow-500 mt-6 md:mt-8"
+                    className="inline-flex items-center px-4 sm:px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm sm:text-base md:text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 border-2 border-yellow-500 mt-6 md:mt-8 overflow-hidden group cursor-pointer"
                 >
-                    <Icon path="M9 5l7 7-7 7" className="w-5 h-5 mr-2" />
-                    <span className="text-justify md:text-justify [text-align-last:left]">
+                    {/* <Icon path="M9 5l7 7-7 7" className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" /> */}
+                    <span className="whitespace-nowrap">
                         Know More
                     </span>
+                    <Icon path="M9 5l7 7-7 7" className="w-4 h-4 sm:w-5 sm:h-5 ml-2 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
                 </button>
             </div>
         </div>

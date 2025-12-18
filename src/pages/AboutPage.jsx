@@ -3,38 +3,43 @@ import { Target, Compass, Award, Icon } from '../components/SharedComponents.jsx
 
 const AboutPage = ({ handleNavClick }) => (
     <>
-   {/* About Hero */}
-<section className="pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-gray-800 to-gray-900 border-b border-yellow-500 relative overflow-hidden">
-    <div className="absolute inset-0 opacity-5 z-0" 
-         style={{
-             backgroundImage: `radial-gradient(circle at 20% 80%, #e8be69 0%, transparent 50%),
+ <section className="pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-br from-gray-800 to-gray-900 border-b border-yellow-500 relative overflow-hidden">
+    <div
+        className="absolute inset-0 opacity-5 z-0"
+        style={{
+            backgroundImage: `radial-gradient(circle at 20% 80%, #e8be69 0%, transparent 50%),
                               radial-gradient(circle at 80% 20%, #e8be69 0%, transparent 50%),
                               radial-gradient(circle at 40% 40%, #e8be69 0%, transparent 50%)`
-         }}>
-    </div>
+        }}
+    ></div>
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-            <p className="text-yellow-500 text-sm md:text-lg font-medium mb-6 md:mb-4">
+            <p className="text-yellow-500 text-sm md:text-lg font-medium mb-6 md:mb-4 tracking-normal">
                 Home / About
             </p>
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold leading-tight text-white mb-6 md:mb-8">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold md:font-extrabold leading-tight text-white mb-6 md:mb-8 tracking-tight">
                 YOUR TRUSTED PARTNER FOR{" "}
                 <span className="text-yellow-500 block md:inline mt-2 md:mt-0">
                     BUSINESS BUYING & SELLING IN UAE
                 </span>
             </h1>
-            <div className="mt-6 md:mt-8 max-w-4xl mx-auto space-y-4">
-                <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                    At POSH Consultants, we believe every major investment decision—whether acquiring a business, expanding a portfolio, entering the real estate market, setting up a company, or pursuing long-term residency—should be supported by clarity, expertise, and unwavering trust. Built on professionalism, transparency, and deep UAE market understanding, we serve as a strategic partner for clients who want the confidence of making the right decisions, the right way.
+
+            <div className="mt-6 md:mt-8 max-w-4xl mx-auto space-y-4 md:space-y-6">
+                <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-normal text-center md:text-left">
+                    At POSH Consultants, we believe every major investment decision—whether acquiring a business, expanding a portfolio, entering the real estate market, setting up a company, or pursuing long-term residency—should be supported by clarity, expertise, and unwavering trust.
                 </p>
-                <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-normal text-center md:text-left">
+                    Built on professionalism, transparency, and deep UAE market understanding, we serve as a strategic partner for clients who want the confidence of making the right decisions, the right way.
+                </p>
+                <p className="text-base md:text-lg text-gray-300 leading-relaxed tracking-normal text-center md:text-left">
                     Our core strength lies in guiding investors through the process of buying and selling businesses. We offer structured, discreet, and insight-driven support, helping investors identify the right opportunities, evaluate real value, and execute transactions with accuracy and confidence.
                 </p>
             </div>
         </div>
     </div>
 </section>
+
 
         {/* Mission/Vision/Value Section */}
         <section className="py-16 md:py-20 bg-white">
@@ -82,31 +87,33 @@ const AboutPage = ({ handleNavClick }) => (
                         </div>
 
                         {/* 3 Pillars */}
-                        <div className="grid grid-cols-3 gap-4 mt-6 md:mt-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 md:mt-8">
                             <div className="p-4 rounded-xl border border-gray-200 bg-white hover:border-yellow-500 transition duration-300 shadow-lg text-center">
-                                <Target className="w-8 h-8 mx-auto text-yellow-500 mb-2" />
-                                <p className="font-bold text-xl text-gray-900">01</p>
-                                <p className="text-sm text-gray-600">Our Commitment</p>
+                            <Icon path="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" 
+      className="w-6 h-6 sm:w-8 sm:h-8 mx-auto text-yellow-500 mb-2" />
+                                <p className="font-bold text-lg sm:text-xl text-gray-900">01</p>
+                                <p className="text-xs sm:text-sm text-gray-600">Our Commitment</p>
                             </div>
                             <div className="p-4 rounded-xl border border-gray-200 bg-white hover:border-yellow-500 transition duration-300 shadow-lg text-center">
-                                <Compass className="w-8 h-8 mx-auto text-yellow-500 mb-2" />
-                                <p className="font-bold text-xl text-gray-900">02</p>
-                                <p className="text-sm text-gray-600">Client-Centric</p>
+                                <Compass className="w-6 h-6 sm:w-8 sm:h-8 mx-auto text-yellow-500 mb-2" />
+                                <p className="font-bold text-lg sm:text-xl text-gray-900">02</p>
+                                <p className="text-xs sm:text-sm text-gray-600">Client-Centric</p>
                             </div>
                             <div className="p-4 rounded-xl border border-gray-200 bg-white hover:border-yellow-500 transition duration-300 shadow-lg text-center">
-                                <Award className="w-8 h-8 mx-auto text-yellow-500 mb-2" />
-                                <p className="font-bold text-xl text-gray-900">03</p>
-                                <p className="text-sm text-gray-600">Ethics & Compliance</p>
+                                <Award className="w-6 h-6 sm:w-8 sm:h-8 mx-auto text-yellow-500 mb-2" />
+                                <p className="font-bold text-lg sm:text-xl text-gray-900">03</p>
+                                <p className="text-xs sm:text-sm text-gray-600">Ethics & Compliance</p>
                             </div>
                         </div>
                     </div>
 
                     {/* Image */}
-                    <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-500">
+                    <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-500 w-full">
                         <img
                             src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1470&q=80"
                             alt="Real estate consultation"
-                            className="object-cover w-full h-full"
+                            className="object-cover w-full h-full max-w-full"
+                            loading="lazy"
                         />
                     </div>
                 </div>
@@ -155,9 +162,10 @@ const AboutPage = ({ handleNavClick }) => (
                     </p>
                     <button 
                         onClick={() => handleNavClick('contactpage')} 
-                        className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold rounded-xl shadow-lg border-2 border-yellow-500 hover:from-yellow-600 hover:to-yellow-700">
-                        <Icon path="M9 5l7 7-7 7" className="w-5 h-5 mr-2" />
-                        Contact Our Team
+                        className="inline-flex items-center px-4 sm:px-6 md:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm sm:text-base md:text-lg font-bold rounded-xl shadow-lg border-2 border-yellow-500 hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 overflow-hidden group">
+                        {/* <Icon path="M9 5l7 7-7 7" className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" /> */}
+                        <span className="whitespace-nowrap">Contact Our Team</span>
+                        <Icon path="M9 5l7 7-7 7" className="w-4 h-4 sm:w-5 sm:h-5 ml-2 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
                     </button>
                 </div>
             </div>
